@@ -116,5 +116,9 @@
 }
 
 @media (min-width: 901px) {
+  .about-photo picture {
+    height: clamp(220px, 20vw, 300px);
+    aspect-ratio: auto;
+  }
   .front-dispatch .stamp { top: auto; bottom: 22px; right: 8px; }
 }
