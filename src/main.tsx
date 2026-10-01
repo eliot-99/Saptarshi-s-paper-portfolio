@@ -9,6 +9,7 @@ import './styles/paper-textures.css'
 import './styles/centered-nameplate.css'
 import './styles/credentials-editorial.css'
 import './styles/toolbox-editorial.css'
+import './styles/final-refinements.css'
 
 const AdminApp = lazy(() => import('./admin/AdminApp'))
 const isAdmin = window.location.pathname.replace(/\/$/, '') === '/admin'

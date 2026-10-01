@@ -3,6 +3,7 @@ import { List } from '@phosphor-icons/react/dist/csr/List'
 import { X } from '@phosphor-icons/react/dist/csr/X'
 import { ArrowUpRight } from '@phosphor-icons/react/dist/csr/ArrowUpRight'
 import type { PortfolioData } from '../../types/portfolio'
+import '../../styles/navigation.css'
 
 export function Header({ data }: { data: PortfolioData }) {
   const [open, setOpen] = useState(false)

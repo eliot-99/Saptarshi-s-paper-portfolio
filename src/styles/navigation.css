@@ -1,0 +1,18 @@
+/* Keep navigation hit targets above the oversized, overlapping masthead. */
+.paper-site .publication-header {
+  position: relative;
+  z-index: 2;
+}
+
+.paper-site .publication-nav .edition,
+.paper-site .publication-nav .nav-note {
+  color: var(--accent);
+}
+
+@media (min-width: 701px) {
+  .paper-site .publication-nav > div > a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+  }
+}

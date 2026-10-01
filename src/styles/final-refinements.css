@@ -1,0 +1,70 @@
+/* A continuous rule joins the career and education columns. */
+.journey-layout { border-top: 1px solid var(--ink); }
+.work-ledger > .ledger-entry:first-child { border-top: 0; }
+.academic-ledger { padding-top: 24px; padding-bottom: 22px; border-bottom: 1px solid var(--ink); }
+.academic-ledger > .academic-description { margin-bottom: 22px; }
+.academic-description + .education-entry { border-top: 0; padding-top: 0; }
+
+/* A paper track and red ink thumb retain native scrolling performance. */
+html { scrollbar-width: thin; scrollbar-color: #a33524 #e8e4db; scrollbar-gutter: stable; }
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-track { background: var(--paper, #e8e4db); }
+*::-webkit-scrollbar-thumb {
+  background: var(--accent, #a33524);
+  border: 2px solid var(--paper, #e8e4db);
+  border-radius: 0;
+}
+*::-webkit-scrollbar-thumb:hover { background: var(--ink, #24241e); }
+*::-webkit-scrollbar-corner { background: var(--paper, #e8e4db); }
+
+@media (min-width: 701px) and (max-width: 900px) {
+  .academic-ledger > .education-entry { border-top: 0; padding-top: 0; }
+}
+
+@media (max-width: 900px) {
+  .academic-ledger { border-top: 1px solid var(--ink); }
+  .academic-ledger > .academic-description { grid-column: 1 / -1; }
+}
+
+@media (max-width: 700px) {
+  .lead-story { text-align: center; }
+  .lead-story > .folio { margin: 0 auto 8px; }
+  .lead-story > h2 { margin-inline: auto; }
+  .lead-story .art-label {
+    top: 8px;
+    bottom: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    white-space: nowrap;
+    font-size: 7px;
+  }
+
+  .publication-footer {
+    grid-template-columns: minmax(0, 1fr);
+    justify-content: stretch;
+    justify-items: center;
+    gap: 12px;
+    text-align: center;
+    padding: 24px 0;
+    border-top: 0;
+  }
+  .publication-footer .publication-brand {
+    max-width: 100%;
+    font-size: clamp(17px, 4.8vw, 22px);
+    line-height: 1.3;
+  }
+  .publication-footer > .folio {
+    max-width: 38ch;
+    font-size: 9px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+  }
+  .publication-footer > a:last-child {
+    justify-content: center;
+    color: var(--accent);
+    min-height: 44px;
+    font-size: 9px;
+    gap: 8px;
+  }
+}
