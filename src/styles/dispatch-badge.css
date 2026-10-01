@@ -1,0 +1,67 @@
+/* A perforated admission ticket gives the dispatch its own printed mark. */
+.front-dispatch > .mini-head { gap: 10px; min-width: 0; }
+.front-dispatch .dispatch-ticket {
+  position: relative;
+  display: inline-flex;
+  align-items: stretch;
+  flex: 0 0 auto;
+  height: 38px;
+  border: 1px solid var(--accent);
+  color: var(--paper);
+  background: var(--accent);
+  line-height: 1;
+  letter-spacing: .08em;
+  transform: rotate(3deg);
+}
+.dispatch-ticket-stub {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  padding: 4px 0;
+  border-right: 1px dashed var(--accent);
+  background: var(--paper);
+  color: var(--ink);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 7px;
+}
+.dispatch-ticket-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  padding: 6px 8px;
+  text-align: center;
+}
+.dispatch-ticket-copy > span { font-size: 7px; letter-spacing: .22em; }
+.dispatch-ticket-copy > strong { font-size: 9px; font-weight: 600; }
+.dispatch-ticket::before,
+.dispatch-ticket::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  left: 16px;
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  background: var(--paper);
+}
+.dispatch-ticket::before { top: -5px; }
+.dispatch-ticket::after { bottom: -5px; }
+
+.front-dispatch > .dispatch-role {
+  max-width: none;
+  white-space: nowrap;
+  font-size: clamp(14px, 1.32vw, 20px);
+  line-height: 1.3;
+  letter-spacing: -.02em;
+}
+
+@media (min-width: 701px) and (max-width: 900px) {
+  .front-dispatch > .dispatch-role { font-size: clamp(12px, 1.75vw, 15px); }
+}
+
+@media (max-width: 700px) {
+  .front-dispatch > .dispatch-role { font-size: clamp(17px, 4.2vw, 21px); }
+}
