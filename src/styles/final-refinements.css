@@ -1,7 +1,9 @@
-/* A continuous rule joins the career and education columns. */
-.journey-layout { border-top: 1px solid var(--ink); }
-.work-ledger > .ledger-entry:first-child { border-top: 0; }
-.academic-ledger { padding-top: 24px; padding-bottom: 22px; border-bottom: 1px solid var(--ink); }
+/* One shared top and bottom rule frames both career and education. */
+#journey { border-bottom: 0; }
+.journey-layout { border-block: 1px solid var(--ink); }
+.journey-layout > .work-ledger { border-top: 0; }
+.work-ledger > .ledger-entry:last-child { border-bottom: 0; }
+.academic-ledger { padding-top: 24px; padding-bottom: 22px; border-bottom: 0; }
 .academic-ledger > .academic-description { margin-bottom: 22px; }
 .academic-description + .education-entry { border-top: 0; padding-top: 0; }
 
