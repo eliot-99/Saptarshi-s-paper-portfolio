@@ -1,0 +1,56 @@
+/* Preserve the overlapping masthead with a centered name and end signature. */
+.front-page .nameplate {
+  display: block;
+  position: relative;
+  padding: 12px 0 28px;
+  text-align: center;
+}
+.front-page .nameplate h1 {
+  width: 100%;
+  min-width: 0;
+  text-align: center;
+}
+.front-page .nameplate .nameplate-surname {
+  position: absolute;
+  display: block;
+  left: auto;
+  right: 1%;
+  bottom: 31px;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: clamp(42px, 7vw, 108px);
+  line-height: 1.2;
+  transform: rotate(-8deg);
+  text-shadow: 2px 2px var(--paper), -2px -2px var(--paper);
+  text-align: center;
+  white-space: nowrap;
+}
+.front-page .nameplate .nameplate-caption {
+  position: absolute;
+  left: 50%;
+  right: auto;
+  bottom: 7px;
+  width: max-content;
+  max-width: 100%;
+  margin: 0;
+  font-size: 10px;
+  line-height: 1.7;
+  letter-spacing: .055em;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .front-page .nameplate { padding: 22px 0 28px; }
+  .front-page .nameplate .nameplate-surname {
+    font-size: 43px;
+    bottom: 23px;
+    line-height: 1.15;
+  }
+  .front-page .nameplate .nameplate-caption { font-size: 8px; letter-spacing: .08em; }
+}
+
+@media (max-width: 360px) {
+  .front-page .nameplate .nameplate-surname { font-size: 36px; }
+}

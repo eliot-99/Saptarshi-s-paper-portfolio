@@ -49,7 +49,7 @@ tests/            Editor tests
 docs/             Content audit, asset reports and font licenses
 ```
 
-`npm run assets:optimize` prepares the editorial artwork and local fonts. Existing optimized images are checked in, so normal development and deployment do not require regenerating them. Generated portrait preparation uses `scripts/optimize-generated-portraits.mjs` and accepts a source directory through `GENERATED_PORTRAIT_DIR`.
+`npm run assets:optimize` prepares editorial artwork, paper textures, the two original-reference portraits and local fonts from checked-in masters. Existing optimized images are checked in, so normal development and deployment do not require regenerating them. Final generated assets and prompts are documented in [paper assets](docs/generated-paper-assets.md) and [portrait assets](docs/portrait-assets.md).
 
 ## Verification
 

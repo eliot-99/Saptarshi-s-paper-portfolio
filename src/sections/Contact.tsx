@@ -8,6 +8,7 @@ import { Phone } from '@phosphor-icons/react/dist/csr/Phone'
 import { PaperPlaneTilt } from '@phosphor-icons/react/dist/csr/PaperPlaneTilt'
 import type { PortfolioData } from '../types/portfolio'
 import type { FormEvent } from 'react'
+import { EditorialTitle } from '../components/ui/EditorialTitle'
 import '../styles/contact.css'
 
 export function Contact({ data }: { data: PortfolioData }) {
@@ -40,7 +41,7 @@ export function Contact({ data }: { data: PortfolioData }) {
         <EnvelopeSimple size={22} weight="light" aria-hidden="true" />
       </div>
       <div className="correspondence-intro">
-        <h2 id="correspondence-heading">{data.contact.heading}</h2>
+        <EditorialTitle id="correspondence-heading" title={data.contact.heading} accentTailWords={2} />
         <p>{data.contact.description}</p>
       </div>
       <div className="correspondence-desk">
@@ -75,11 +76,11 @@ export function Contact({ data }: { data: PortfolioData }) {
             <div className="correspondence-stamp" aria-hidden="true"><EnvelopeSimple size={34} weight="light" /><span>{data.person.firstName}</span></div>
           </div>
           <div className="correspondence-fields-two">
-            <label>Your name<input name="name" autoComplete="name" placeholder="Alex Smith" required maxLength={100} /></label>
-            <label>Your email<input name="email" type="email" autoComplete="email" placeholder="alex@example.com" required maxLength={200} /></label>
+            <label className="correspondence-field"><span className="correspondence-field-label"><span aria-hidden="true">01</span>Your name</span><input name="name" autoComplete="name" placeholder="Alex Smith" required maxLength={100} /></label>
+            <label className="correspondence-field"><span className="correspondence-field-label"><span aria-hidden="true">02</span>Your email</span><input name="email" type="email" autoComplete="email" placeholder="alex@example.com" required maxLength={200} /></label>
           </div>
-          <label>Subject<input name="subject" placeholder="A project, an idea, a hello…" required maxLength={200} /></label>
-          <label>Your message<textarea name="message" rows={4} placeholder="Tell me what you have in mind." required maxLength={5000} /></label>
+          <label className="correspondence-field"><span className="correspondence-field-label"><span aria-hidden="true">03</span>Subject</span><input name="subject" placeholder="A project, an idea, a hello…" required maxLength={200} /></label>
+          <label className="correspondence-field correspondence-field-message"><span className="correspondence-field-label"><span aria-hidden="true">04</span>Your message</span><textarea name="message" rows={4} placeholder="Tell me what you have in mind." required maxLength={5000} /></label>
           <div className="correspondence-send">
             <button type="submit"><span>{data.contact.submitLabel}</span><PaperPlaneTilt size={23} weight="light" aria-hidden="true" /></button>
             <p className="folio">Opens your email app</p>

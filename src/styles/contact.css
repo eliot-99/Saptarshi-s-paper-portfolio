@@ -4,8 +4,8 @@
 .correspondence-intro { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 80px); align-items: end; padding: 28px 0 38px; }
 .correspondence-intro h2 { font-family: "Bodoni Moda", Georgia, serif; font-size: clamp(48px, 5.8vw, 88px); font-weight: 500; line-height: 1.02; letter-spacing: -.055em; max-width: 15ch; text-wrap: balance; }
 .correspondence-intro > p { font-family: "Bodoni Moda", Georgia, serif; font-size: clamp(20px, 2vw, 28px); line-height: 1.4; max-width: 28ch; padding-bottom: 3px; }
-.correspondence-desk { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(30px, 5vw, 78px); align-items: start; }
-.correspondence-address { min-width: 0; padding-top: 7px; }
+.correspondence-desk { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(30px, 5vw, 78px); align-items: stretch; }
+.correspondence-address { min-width: 0; display: flex; flex-direction: column; border-top: 3px double var(--ink); border-bottom: 3px double var(--ink); padding: 28px 0 12px; }
 .correspondence-email-block > .folio { margin-bottom: 15px; color: var(--accent); }
 .correspondence-email { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 17px; border-bottom: 1px solid var(--ink); font-family: "Bodoni Moda", Georgia, serif; font-size: clamp(22px, 2.15vw, 34px); line-height: 1.25; letter-spacing: -.045em; }
 .correspondence-email > span { min-width: 0; overflow-wrap: anywhere; }
@@ -13,15 +13,15 @@
 .correspondence-email:hover > svg { transform: translate(3px, -3px); }
 .correspondence-copy { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 9px 0; font-size: 11px; }
 .correspondence-copy:hover { color: var(--accent); }
-.correspondence-details { margin: 18px 0 30px; }
-.correspondence-details > div { padding: 19px 0; border-bottom: 1px solid color-mix(in srgb, var(--ink), transparent 65%); }
+.correspondence-details { flex: 1; display: grid; grid-template-rows: repeat(2, minmax(0, 1fr)); margin: 14px 0 28px; }
+.correspondence-details > div { display: flex; flex-direction: column; justify-content: center; padding: 25px 0; border-bottom: 1px solid color-mix(in srgb, var(--ink), transparent 65%); }
 .correspondence-details dt { display: flex; align-items: center; gap: 10px; }
 .correspondence-details dt > svg { color: var(--accent); flex-shrink: 0; }
-.correspondence-details dd { margin: 9px 0 0 29px; font-size: 14px; line-height: 1.65; max-width: 34ch; }
-.correspondence-details dd > a { display: inline-flex; align-items: center; gap: 12px; min-height: 30px; }
+.correspondence-details dd { margin: 11px 0 0 29px; font-size: 17px; line-height: 1.65; max-width: 34ch; }
+.correspondence-details dd > a { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; font-family: "Bodoni Moda", Georgia, serif; font-size: clamp(25px, 2.5vw, 37px); line-height: 1.2; letter-spacing: -.04em; }
 .correspondence-details dd > a:hover { color: var(--accent); }
 .correspondence-socials { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 26px; }
-.correspondence-socials > a { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 48px; padding: 12px 0; border-bottom: 1px solid var(--ink); font-size: 12px; }
+.correspondence-socials > a { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 62px; padding: 18px 0; border-top: 1px solid var(--ink); font-size: 14px; }
 .correspondence-socials > a:hover { color: var(--accent); border-color: var(--accent); }
 .correspondence-socials svg { flex-shrink: 0; }
 .correspondence-letter { min-width: 0; border: 1px solid var(--ink); background: color-mix(in srgb, var(--paper), white 19%); padding: clamp(24px, 2.6vw, 42px); position: relative; }
@@ -31,11 +31,17 @@
 .correspondence-letter-heading h3 { font-family: "Bodoni Moda", Georgia, serif; font-size: clamp(27px, 2.8vw, 42px); font-weight: 500; line-height: 1.15; letter-spacing: -.045em; }
 .correspondence-stamp { width: 74px; min-height: 81px; flex-shrink: 0; color: var(--accent); border: 1px dashed currentColor; outline: 1px solid currentColor; outline-offset: -5px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 6px; padding: 10px 4px; transform: rotate(6deg); }
 .correspondence-stamp > span { font-family: "IBM Plex Mono", monospace; font-size: 7px; text-transform: uppercase; letter-spacing: .08em; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
-.correspondence-fields-two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
-.correspondence-letter label { display: block; min-width: 0; font-family: "IBM Plex Mono", monospace; font-size: 9px; line-height: 1.6; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 24px; }
-.correspondence-letter input, .correspondence-letter textarea { display: block; width: 100%; border: 0; border-bottom: 1px solid color-mix(in srgb, var(--ink), transparent 58%); border-radius: 0; padding: 11px 0; color: var(--ink); background: transparent; font-family: var(--body), Arial, sans-serif; font-size: 14px; line-height: 1.65; letter-spacing: 0; text-transform: none; }
-.correspondence-letter input::placeholder, .correspondence-letter textarea::placeholder { color: color-mix(in srgb, var(--ink), transparent 43%); opacity: 1; }
-.correspondence-letter textarea { resize: vertical; min-height: 122px; background: repeating-linear-gradient(transparent 0, transparent 29px, color-mix(in srgb, var(--ink), transparent 88%) 29px, color-mix(in srgb, var(--ink), transparent 88%) 30px); line-height: 30px; }
+.correspondence-fields-two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.correspondence-letter .correspondence-field { display: block; min-width: 0; padding: 13px 16px 9px; border: 1px solid color-mix(in srgb, var(--ink), transparent 66%); border-bottom-color: color-mix(in srgb, var(--ink), transparent 38%); background: color-mix(in srgb, var(--paper), white 29%); margin-bottom: 16px; transition: border-color .2s ease, background .2s ease; }
+.correspondence-field-label { display: flex; align-items: center; gap: 12px; font-family: "IBM Plex Mono", monospace; font-size: 9px; line-height: 1.6; text-transform: uppercase; letter-spacing: .075em; }
+.correspondence-field-label > span { color: var(--accent); font-size: 10px; padding-right: 10px; border-right: 1px solid color-mix(in srgb, var(--accent), transparent 55%); }
+.correspondence-letter input, .correspondence-letter textarea { display: block; width: 100%; min-height: 44px; border: 0; border-radius: 0; padding: 9px 0 3px; color: var(--ink); background: transparent; font-family: var(--body), Arial, sans-serif; font-size: 16px; line-height: 1.75; letter-spacing: 0; text-transform: none; }
+.correspondence-letter input::placeholder, .correspondence-letter textarea::placeholder { color: color-mix(in srgb, var(--ink), transparent 45%); opacity: 1; }
+.correspondence-letter .correspondence-field:focus-within { border-color: var(--accent); background: color-mix(in srgb, var(--paper), white 45%); }
+.correspondence-letter input:focus-visible, .correspondence-letter textarea:focus-visible { outline: none; }
+.correspondence-field:focus-within .correspondence-field-label { color: var(--accent); }
+.correspondence-letter .correspondence-field-message { padding-bottom: 15px; }
+.correspondence-letter textarea { resize: vertical; min-height: 149px; margin-top: 5px; background: repeating-linear-gradient(transparent 0, transparent 31px, color-mix(in srgb, var(--ink), transparent 88%) 31px, color-mix(in srgb, var(--ink), transparent 88%) 32px); line-height: 32px; }
 .correspondence-send { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 29px; }
 .correspondence-send > button { display: flex; justify-content: space-between; align-items: center; gap: 32px; min-height: 52px; padding: 15px 20px; background: var(--ink); color: var(--paper); font-size: 13px; transition: background .2s ease; }
 .correspondence-send > button:hover { background: var(--accent); }
@@ -50,16 +56,17 @@
   .correspondence-email { font-size: 25px; }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .correspondence-intro { grid-template-columns: 1fr; gap: 20px; padding: 25px 0 30px; }
   .correspondence-intro h2 { font-size: clamp(43px, 8.3vw, 62px); max-width: 16ch; }
   .correspondence-intro > p { font-size: 21px; max-width: 34ch; }
   .correspondence-desk { grid-template-columns: 1fr; gap: 34px; }
-  .correspondence-address { padding-top: 0; }
+  .correspondence-address { padding-top: 24px; }
   .correspondence-email { font-size: clamp(22px, 4.9vw, 33px); }
-  .correspondence-details { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin: 12px 0 18px; }
-  .correspondence-details dd { margin-left: 0; font-size: 13px; }
-  .correspondence-fields-two { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+  .correspondence-details { flex: none; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto; gap: 24px; margin: 12px 0 18px; }
+  .correspondence-details > div { justify-content: start; }
+  .correspondence-details dd { margin-left: 0; font-size: 15px; }
+  .correspondence-fields-two { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
   .correspondence-letter input, .correspondence-letter textarea { font-size: 16px; }
 }
 
@@ -75,7 +82,7 @@
   .correspondence-details > div { padding: 16px 0; }
   .correspondence-details dd { margin-left: 29px; max-width: 29ch; }
   .correspondence-socials { gap: 0 24px; }
-  .correspondence-socials > a { font-size: 12px; }
+  .correspondence-socials > a { font-size: 13px; min-height: 56px; padding: 16px 0; }
   .correspondence-letter { padding: 24px 20px; }
   .correspondence-letter-heading { padding-bottom: 22px; margin-bottom: 23px; gap: 14px; }
   .correspondence-letter-heading h3 { font-size: 30px; }
@@ -84,7 +91,8 @@
   .correspondence-stamp > svg { width: 29px; }
   .correspondence-stamp > span { font-size: 6px; }
   .correspondence-fields-two { grid-template-columns: 1fr; gap: 0; }
-  .correspondence-letter label { margin-bottom: 22px; font-size: 9px; }
+  .correspondence-letter .correspondence-field { padding: 12px 13px 9px; margin-bottom: 14px; }
+  .correspondence-field-label { font-size: 9px; }
   .correspondence-send { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 24px; }
   .correspondence-send > button { width: 100%; padding: 15px 18px; }
   .correspondence-send > .folio { max-width: none; text-align: center; }

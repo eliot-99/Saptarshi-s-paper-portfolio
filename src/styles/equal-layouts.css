@@ -1,0 +1,164 @@
+/* Each case uses the same printed column: details remain available in its dialog. */
+.project-grid {
+  align-items: stretch;
+}
+
+.project-grid > .project-story {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.project-story > .project-record {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: 25px 52px 24px 58px 60px minmax(42px, 1fr);
+  gap: 7px;
+  flex: 0 0 360px;
+  height: 360px;
+  padding: 18px;
+  min-width: 0;
+}
+
+.project-record .project-record-top {
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.project-record .project-record-icon {
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  align-self: center;
+}
+
+.project-record .project-meta {
+  margin: 0;
+  min-height: 0;
+  line-height: 1.5;
+}
+
+.project-record .project-title {
+  min-width: 0;
+  margin: 0;
+  font-size: 26px;
+  line-height: 1.1;
+}
+
+.project-record .project-title strong {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.project-record .project-title > svg {
+  flex: 0 0 20px;
+  width: 20px;
+}
+
+.project-record .project-summary {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  align-self: start;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.project-record .project-tags {
+  align-content: end;
+  align-self: stretch;
+  margin: 0;
+}
+
+.project-story > .project-links {
+  flex: 0 0 44px;
+  min-height: 44px;
+  margin: 8px 0 0;
+  align-content: center;
+}
+
+.project-story > .project-links .text-link {
+  min-height: 44px;
+}
+
+/* Share the education column's height among the three career entries. */
+@media (min-width: 901px) {
+  .journey-layout {
+    align-items: stretch;
+  }
+
+  .journey-layout > .work-ledger {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .work-ledger > .ledger-entry {
+    flex: 1 0 auto;
+    align-content: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .project-story > .project-record {
+    grid-template-columns: 44px minmax(0, 1fr);
+    grid-template-rows: 28px 22px 64px 65px minmax(48px, 1fr);
+    gap: 8px 14px;
+    flex-basis: 314px;
+    height: 314px;
+    padding: 18px;
+  }
+
+  .project-record .project-record-top {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .project-record .project-record-icon {
+    grid-column: 1;
+    grid-row: 2 / 4;
+    align-self: center;
+    width: 44px;
+    height: 44px;
+  }
+
+  .project-record .project-meta {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 8px;
+    line-height: 1.4;
+  }
+
+  .project-record .project-title {
+    grid-column: 2;
+    grid-row: 3;
+    font-size: clamp(24px, 6.4vw, 28px);
+    line-height: 1.15;
+  }
+
+  .project-record .project-summary {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    font-size: 13px;
+  }
+
+  .project-record .project-tags {
+    grid-column: 1 / -1;
+    grid-row: 5;
+  }
+
+  .project-story > .project-links {
+    margin-top: 4px;
+  }
+}
+
+@media (max-width: 380px) {
+  .project-story > .project-record {
+    padding: 14px;
+    column-gap: 12px;
+  }
+}

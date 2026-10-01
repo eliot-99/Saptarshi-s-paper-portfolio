@@ -61,20 +61,20 @@ export const defaultPortfolio: PortfolioData = {
     "phone": "+91 6296770327",
     "resumeUrl": "/assets/resume/saptarshi-ghosh-2026.pdf",
     "portrait": {
-      "src": "/assets/portraits/portrait-new-vertical.webp",
-      "avif": "/assets/portraits/portrait-new-vertical.avif",
+      "src": "/assets/portraits/portrait-passport-maker.webp",
+      "avif": "/assets/portraits/portrait-passport-maker.avif",
       "alt": "Editorial halftone portrait of Saptarshi Ghosh",
-      "width": 1122,
-      "height": 1402,
-      "srcSet": "/assets/portraits/portrait-new-vertical-600.webp 600w, /assets/portraits/portrait-new-vertical.webp 1122w"
+      "width": 1254,
+      "height": 1254,
+      "srcSet": "/assets/portraits/portrait-passport-maker-600.webp 600w, /assets/portraits/portrait-passport-maker.webp 1254w"
     },
     "aboutPortrait": {
-      "src": "/assets/portraits/portrait-new-landscape.webp",
-      "avif": "/assets/portraits/portrait-new-landscape.avif",
+      "src": "/assets/portraits/portrait-reference-about.webp",
+      "avif": "/assets/portraits/portrait-reference-about.avif",
       "alt": "Editorial halftone portrait of Saptarshi Ghosh, software engineer and creative designer",
-      "width": 1536,
-      "height": 1024,
-      "srcSet": "/assets/portraits/portrait-new-landscape-600.webp 600w, /assets/portraits/portrait-new-landscape.webp 1536w"
+      "width": 1309,
+      "height": 1201,
+      "srcSet": "/assets/portraits/portrait-reference-about-600.webp 600w, /assets/portraits/portrait-reference-about.webp 1309w"
     }
   },
   "hero": {
@@ -154,24 +154,6 @@ export const defaultPortfolio: PortfolioData = {
       "certificateUrl": "https://drive.google.com/file/d/1AQVf6clk0TniKu-x2RaZ9QnQb1dOhB_j/view"
     },
     {
-      "id": "nexaric-associate",
-      "title": "Associate Software Engineer",
-      "organization": "Nexaric",
-      "location": "India",
-      "startDate": "2026-09",
-      "endDate": "present",
-      "period": "September 2026 — Present",
-      "description": "Currently working as an Associate Software Engineer at Nexaric.",
-      "highlights": [
-        "Joined Nexaric following a three-month frontend web development internship."
-      ],
-      "tags": [
-        "Software Engineering",
-        "Web Development"
-      ],
-      "kind": "work"
-    },
-    {
       "id": "nexaric-internship",
       "title": "Frontend Web Developer Intern",
       "organization": "Nexaric",
@@ -192,6 +174,24 @@ export const defaultPortfolio: PortfolioData = {
         "AI Tools"
       ],
       "kind": "internship"
+    },
+    {
+      "id": "nexaric-associate",
+      "title": "Associate Software Engineer",
+      "organization": "Nexaric",
+      "location": "India",
+      "startDate": "2026-09",
+      "endDate": "present",
+      "period": "September 2026 — Present",
+      "description": "Currently working as an Associate Software Engineer at Nexaric.",
+      "highlights": [
+        "Joined Nexaric following a three-month frontend web development internship."
+      ],
+      "tags": [
+        "Software Engineering",
+        "Web Development"
+      ],
+      "kind": "work"
     }
   ],
   "education": [
