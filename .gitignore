@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.wrangler/
+.source/
+tmp/
+.firecrawl/
+.dev.vars*
+.env*
+!.env.example
+.secrets/
+test-results/
+playwright-report/
+.DS_Store
+*.local

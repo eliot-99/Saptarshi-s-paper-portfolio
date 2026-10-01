@@ -1,0 +1,8 @@
+import { ArrowUpRight } from '@phosphor-icons/react/dist/csr/ArrowUpRight'
+import { SealCheck } from '@phosphor-icons/react/dist/csr/SealCheck'
+import type { PortfolioData } from '../types/portfolio'
+import { SectionHeading } from '../components/ui/SectionHeading'
+
+export function Credentials({ data }: { data: PortfolioData }) {
+  return <section id="credentials" className="section-space"><SectionHeading number="06" copy={data.sectionCopy.credentials} /><div className="credentials-layout"><div><p className="folio ledger-label">PROFESSIONAL CERTIFICATIONS</p>{data.certifications.map(item => <a href={item.url} target="_blank" rel="noopener noreferrer" className="certificate-row" key={item.id}><SealCheck size={32} weight="duotone" /><div><p className="folio">{item.organization} / {item.year} / {item.duration}</p><h3>{item.title}</h3><p>{item.skills.join(' · ')}</p></div><ArrowUpRight size={23} /></a>)}</div><div><p className="folio ledger-label">RECOGNITION & LEADERSHIP</p>{data.achievements.map((item, index) => <article className="achievement-item" key={item.id}><span className="achievement-number">0{index + 1}</span><div><p className="folio">{item.organization} / {item.period}</p><h3>{item.title}</h3><p>{item.description}</p>{item.url && <a className="text-link" href={item.url} target="_blank" rel="noopener noreferrer">View recognition <ArrowUpRight size={17} /></a>}</div></article>)}</div></div><div className="interests-strip"><p className="folio">OFF THE CLOCK</p>{data.interests.map(item => <article key={item.id}><h3>{item.title}</h3><p>{item.description}</p></article>)}</div></section>
+}

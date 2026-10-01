@@ -1,0 +1,52 @@
+{
+  "name": "saptarshi-paper-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc -b && vite build && node scripts/prerender.mjs",
+    "preview": "vite preview --host 0.0.0.0",
+    "dev:full": "wrangler d1 migrations apply saptarshi-paper-portfolio --local && wrangler pages dev dist",
+    "deploy": "npm run build && wrangler pages deploy dist --project-name=saptarshi-paper-portfolio",
+    "typecheck": "tsc -b",
+    "cf:types": "wrangler types",
+    "assets:optimize": "node scripts/prepare-artwork.mjs",
+    "test:e2e": "playwright test",
+    "test:security": "node scripts/backend-test.mjs",
+    "test:backend": "node scripts/backend-runtime-test.mjs",
+    "typecheck:server": "tsc -p tsconfig.server.json",
+    "verify:assets": "node scripts/verify-content-assets.mjs"
+  },
+  "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
+    "framer-motion": "^13.4.6",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260930.2",
+    "@fontsource/barlow-condensed": "^5.3.0",
+    "@fontsource/bodoni-moda": "^5.3.0",
+    "@fontsource/dm-sans": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@playwright/test": "^1.63.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^26.6.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "esbuild": "^0.28.2",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.1",
+    "wrangler": "^4.145.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.1": true,
+    "workerd@1.20260930.2": true,
+    "esbuild@0.28.2": true
+  }
+}

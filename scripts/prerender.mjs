@@ -1,0 +1,11 @@
+import { build } from 'esbuild';
+import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { pathToFileURL } from 'node:url';
+import path from 'node:path';
+await mkdir('.source/build',{recursive:true});
+await build({ entryPoints:['scripts/prerender-entry.tsx'], outfile:'.source/build/prerender.mjs', bundle:true, platform:'node', format:'esm', packages:'external', jsx:'automatic' });
+const {html} = await import(pathToFileURL(path.resolve('.source/build/prerender.mjs')).href);
+let template = await readFile('dist/index.html','utf8');
+template = template.replace('<div id="root"></div>', `<div id="root">${html}</div>`);
+await writeFile('dist/index.html',template);
+console.log(`Pre-rendered public edition: ${Buffer.byteLength(html)} bytes of immediately readable HTML.`);

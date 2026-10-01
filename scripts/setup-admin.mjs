@@ -1,0 +1,12 @@
+import { randomBytes, pbkdf2Sync } from 'node:crypto';
+import { writeFile, mkdir } from 'node:fs/promises';
+import { createInterface } from 'node:readline';
+const rl=createInterface({input:process.stdin,output:process.stderr,terminal:true});
+const password=await new Promise(resolve=>{rl.question('Admin password (hidden): ',answer=>{rl.close();resolve(answer)});rl._writeToOutput=()=>{};});
+if(typeof password!=='string'||password.length<8)throw new Error('Password needs at least 8 characters');
+const salt=randomBytes(16); const hash=pbkdf2Sync(password,salt,100000,32,'sha256');
+const value=`pbkdf2-sha256$100000$${salt.toString('base64')}$${hash.toString('base64')}`;
+await mkdir('.secrets',{recursive:true});
+await writeFile('.secrets/admin.json',JSON.stringify({ADMIN_PASSWORD_HASH:value}));
+await writeFile('.dev.vars',`ADMIN_PASSWORD_HASH="${value}"\n`);
+process.stdout.write('\nProtected secret files prepared. No plaintext password saved.\n');

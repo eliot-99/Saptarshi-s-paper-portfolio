@@ -1,0 +1,91 @@
+.correspondence-section { min-width: 0; border-bottom: 3px double var(--ink); }
+.correspondence-folio { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--ink); }
+.correspondence-folio > svg { color: var(--accent); flex-shrink: 0; }
+.correspondence-intro { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 80px); align-items: end; padding: 28px 0 38px; }
+.correspondence-intro h2 { font-family: "Bodoni Moda", Georgia, serif; font-size: clamp(48px, 5.8vw, 88px); font-weight: 500; line-height: 1.02; letter-spacing: -.055em; max-width: 15ch; text-wrap: balance; }
+.correspondence-intro > p { font-family: "Bodoni Moda", Georgia, serif; font-size: clamp(20px, 2vw, 28px); line-height: 1.4; max-width: 28ch; padding-bottom: 3px; }
+.correspondence-desk { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(30px, 5vw, 78px); align-items: start; }
+.correspondence-address { min-width: 0; padding-top: 7px; }
+.correspondence-email-block > .folio { margin-bottom: 15px; color: var(--accent); }
+.correspondence-email { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 17px; border-bottom: 1px solid var(--ink); font-family: "Bodoni Moda", Georgia, serif; font-size: clamp(22px, 2.15vw, 34px); line-height: 1.25; letter-spacing: -.045em; }
+.correspondence-email > span { min-width: 0; overflow-wrap: anywhere; }
+.correspondence-email > svg { flex-shrink: 0; color: var(--accent); transition: transform .2s ease; }
+.correspondence-email:hover > svg { transform: translate(3px, -3px); }
+.correspondence-copy { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 9px 0; font-size: 11px; }
+.correspondence-copy:hover { color: var(--accent); }
+.correspondence-details { margin: 18px 0 30px; }
+.correspondence-details > div { padding: 19px 0; border-bottom: 1px solid color-mix(in srgb, var(--ink), transparent 65%); }
+.correspondence-details dt { display: flex; align-items: center; gap: 10px; }
+.correspondence-details dt > svg { color: var(--accent); flex-shrink: 0; }
+.correspondence-details dd { margin: 9px 0 0 29px; font-size: 14px; line-height: 1.65; max-width: 34ch; }
+.correspondence-details dd > a { display: inline-flex; align-items: center; gap: 12px; min-height: 30px; }
+.correspondence-details dd > a:hover { color: var(--accent); }
+.correspondence-socials { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 26px; }
+.correspondence-socials > a { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 48px; padding: 12px 0; border-bottom: 1px solid var(--ink); font-size: 12px; }
+.correspondence-socials > a:hover { color: var(--accent); border-color: var(--accent); }
+.correspondence-socials svg { flex-shrink: 0; }
+.correspondence-letter { min-width: 0; border: 1px solid var(--ink); background: color-mix(in srgb, var(--paper), white 19%); padding: clamp(24px, 2.6vw, 42px); position: relative; }
+.correspondence-letter::before { content: ""; position: absolute; inset: 6px; border: 1px solid color-mix(in srgb, var(--ink), transparent 78%); pointer-events: none; }
+.correspondence-letter-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; padding-bottom: 28px; margin-bottom: 26px; border-bottom: 1px solid var(--ink); }
+.correspondence-letter-heading .folio { color: var(--accent); margin-bottom: 8px; }
+.correspondence-letter-heading h3 { font-family: "Bodoni Moda", Georgia, serif; font-size: clamp(27px, 2.8vw, 42px); font-weight: 500; line-height: 1.15; letter-spacing: -.045em; }
+.correspondence-stamp { width: 74px; min-height: 81px; flex-shrink: 0; color: var(--accent); border: 1px dashed currentColor; outline: 1px solid currentColor; outline-offset: -5px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 6px; padding: 10px 4px; transform: rotate(6deg); }
+.correspondence-stamp > span { font-family: "IBM Plex Mono", monospace; font-size: 7px; text-transform: uppercase; letter-spacing: .08em; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+.correspondence-fields-two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.correspondence-letter label { display: block; min-width: 0; font-family: "IBM Plex Mono", monospace; font-size: 9px; line-height: 1.6; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 24px; }
+.correspondence-letter input, .correspondence-letter textarea { display: block; width: 100%; border: 0; border-bottom: 1px solid color-mix(in srgb, var(--ink), transparent 58%); border-radius: 0; padding: 11px 0; color: var(--ink); background: transparent; font-family: var(--body), Arial, sans-serif; font-size: 14px; line-height: 1.65; letter-spacing: 0; text-transform: none; }
+.correspondence-letter input::placeholder, .correspondence-letter textarea::placeholder { color: color-mix(in srgb, var(--ink), transparent 43%); opacity: 1; }
+.correspondence-letter textarea { resize: vertical; min-height: 122px; background: repeating-linear-gradient(transparent 0, transparent 29px, color-mix(in srgb, var(--ink), transparent 88%) 29px, color-mix(in srgb, var(--ink), transparent 88%) 30px); line-height: 30px; }
+.correspondence-send { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 29px; }
+.correspondence-send > button { display: flex; justify-content: space-between; align-items: center; gap: 32px; min-height: 52px; padding: 15px 20px; background: var(--ink); color: var(--paper); font-size: 13px; transition: background .2s ease; }
+.correspondence-send > button:hover { background: var(--accent); }
+.correspondence-send > .folio { font-size: 8px; max-width: 16ch; }
+.correspondence-status { font-size: 12px; line-height: 1.7; margin-top: 20px; overflow-wrap: anywhere; }
+.correspondence-status:empty { display: none; }
+
+@media (max-width: 1050px) {
+  .correspondence-intro { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 30px; }
+  .correspondence-desk { gap: 30px; }
+  .correspondence-fields-two { grid-template-columns: 1fr; gap: 0; }
+  .correspondence-email { font-size: 25px; }
+}
+
+@media (max-width: 760px) {
+  .correspondence-intro { grid-template-columns: 1fr; gap: 20px; padding: 25px 0 30px; }
+  .correspondence-intro h2 { font-size: clamp(43px, 8.3vw, 62px); max-width: 16ch; }
+  .correspondence-intro > p { font-size: 21px; max-width: 34ch; }
+  .correspondence-desk { grid-template-columns: 1fr; gap: 34px; }
+  .correspondence-address { padding-top: 0; }
+  .correspondence-email { font-size: clamp(22px, 4.9vw, 33px); }
+  .correspondence-details { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin: 12px 0 18px; }
+  .correspondence-details dd { margin-left: 0; font-size: 13px; }
+  .correspondence-fields-two { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+  .correspondence-letter input, .correspondence-letter textarea { font-size: 16px; }
+}
+
+@media (max-width: 480px) {
+  .correspondence-folio { padding-bottom: 12px; }
+  .correspondence-folio .folio { font-size: 8px; }
+  .correspondence-intro h2 { font-size: clamp(38px, 10.4vw, 49px); line-height: 1.08; letter-spacing: -.045em; }
+  .correspondence-intro > p { font-size: 19px; line-height: 1.45; }
+  .correspondence-email-block > .folio { font-size: 8px; margin-bottom: 12px; }
+  .correspondence-email { font-size: clamp(20px, 5.8vw, 27px); gap: 10px; padding-bottom: 13px; }
+  .correspondence-email > svg { width: 22px; }
+  .correspondence-details { grid-template-columns: 1fr; gap: 0; }
+  .correspondence-details > div { padding: 16px 0; }
+  .correspondence-details dd { margin-left: 29px; max-width: 29ch; }
+  .correspondence-socials { gap: 0 24px; }
+  .correspondence-socials > a { font-size: 12px; }
+  .correspondence-letter { padding: 24px 20px; }
+  .correspondence-letter-heading { padding-bottom: 22px; margin-bottom: 23px; gap: 14px; }
+  .correspondence-letter-heading h3 { font-size: 30px; }
+  .correspondence-letter-heading .folio { font-size: 8px; }
+  .correspondence-stamp { width: 59px; min-height: 70px; }
+  .correspondence-stamp > svg { width: 29px; }
+  .correspondence-stamp > span { font-size: 6px; }
+  .correspondence-fields-two { grid-template-columns: 1fr; gap: 0; }
+  .correspondence-letter label { margin-bottom: 22px; font-size: 9px; }
+  .correspondence-send { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 24px; }
+  .correspondence-send > button { width: 100%; padding: 15px 18px; }
+  .correspondence-send > .folio { max-width: none; text-align: center; }
+}
